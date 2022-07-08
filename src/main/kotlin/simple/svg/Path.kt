@@ -123,7 +123,7 @@ val Path.reversed: Path get() {
             .splitInclusive { it == CommandType.MoveTo }
             .asReversed()
             .map { it.asReversed() }
-            .map { if (it[0] == CommandType.Close) it.drop(1) + CommandType.Close else it }
+            .map { if (it[0] == CommandType.Close) it.toMutableList().apply { add(lastIndex, CommandType.Close) }.drop(1) else it }
             .flatMap { listOf(CommandType.MoveTo) + it.dropLast(1) }
 
         var used = 0
