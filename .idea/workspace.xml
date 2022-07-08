@@ -4,28 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/ArcToCurve.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Command.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/DefaultFigures.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/MutablePath.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathParser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/ShapeBounds.java" afterDir="false" />
+    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="create project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +60,14 @@
       <option name="presentableId" value="Default" />
       <updated>1657305044292</updated>
     </task>
+    <task id="LOCAL-00001" summary="create project">
+      <created>1657316136026</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657316136026</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,15 +81,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/simple/svg/PathParser.kt</url>
-          <line>33</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create project" />
+    <option name="LAST_COMMIT_MESSAGE" value="create project" />
   </component>
 </project>
