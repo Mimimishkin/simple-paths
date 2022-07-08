@@ -128,7 +128,7 @@ val Path.reversed: Path get() {
 
         var used = 0
         types.map { type ->
-            val range = used.. (used + type.argumentsCount)
+            val range = used until  (used + type.argumentsCount)
             used += type.argumentsCount
             type.makeCommand(allArguments.slice(range))
         }
