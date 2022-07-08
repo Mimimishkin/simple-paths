@@ -6,3 +6,11 @@ plugins {
 
 group = "my.utilities"
 version = "1.0.0"
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions.jvmTarget = "1.8"
+}
