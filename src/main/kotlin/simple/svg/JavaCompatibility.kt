@@ -46,7 +46,7 @@ private class TransformedPathIterator(
 
 private class Iter(path: Path) : PathIterator {
     val iterator = path.simplified.iterator()
-    lateinit var current: Command
+    var current = iterator.next()
 
     override fun getWindingRule() = PathIterator.WIND_EVEN_ODD
 

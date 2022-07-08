@@ -11,47 +11,47 @@ sealed class Command(val type: CommandType) {
     data class MoveToRelative(
         val dx: Float,
         val dy: Float
-    ) : Command(CommandType.MoveTo)
+    ) : Command(CommandType.MoveToRelative)
 
     data class LineTo(
         val x: Float,
         val y: Float
-    ) : Command(CommandType.MoveToRelative)
+    ) : Command(CommandType.LineTo)
 
     data class LineToRelative(
         val dx: Float,
         val dy: Float
-    ) : Command(CommandType.LineTo)
+    ) : Command(CommandType.LineToRelative)
 
     data class VerticalLineTo(
         val y: Float
-    ) : Command(CommandType.LineToRelative)
+    ) : Command(CommandType.VerticalLineTo)
 
     data class VerticalLineToRelative(
         val dy: Float
-    ) : Command(CommandType.VerticalLineTo)
+    ) : Command(CommandType.VerticalLineToRelative)
 
     data class HorizontalLineTo(
         val x: Float
-    ) : Command(CommandType.VerticalLineToRelative)
+    ) : Command(CommandType.HorizontalLineTo)
 
     data class HorizontalLineToRelative(
         val dx: Float
-    ) : Command(CommandType.HorizontalLineTo)
+    ) : Command(CommandType.HorizontalLineToRelative)
 
     data class QuadTo(
         val x1: Float,
         val y1: Float,
         val x: Float,
         val y: Float,
-    ) : Command(CommandType.HorizontalLineToRelative)
+    ) : Command(CommandType.QuadTo)
 
     data class QuadToRelative(
         val dx1: Float,
         val dy1: Float,
         val dx: Float,
         val dy: Float,
-    ) : Command(CommandType.QuadTo)
+    ) : Command(CommandType.QuadToRelative)
 
     data class CubicTo(
         val x1: Float,
@@ -60,7 +60,7 @@ sealed class Command(val type: CommandType) {
         val y2: Float,
         val x: Float,
         val y: Float,
-    ) : Command(CommandType.QuadToRelative)
+    ) : Command(CommandType.CubicTo)
 
     data class CubicToRelative(
         val dx1: Float,
@@ -69,31 +69,31 @@ sealed class Command(val type: CommandType) {
         val dy2: Float,
         val dx: Float,
         val dy: Float,
-    ) : Command(CommandType.CubicTo)
+    ) : Command(CommandType.CubicToRelative)
 
     data class SmoothQuadTo(
         val x: Float,
         val y: Float,
-    ) : Command(CommandType.CubicToRelative)
+    ) : Command(CommandType.SmoothQuadTo)
 
     data class SmoothQuadToRelative(
         val dx: Float,
         val dy: Float,
-    ) : Command(CommandType.SmoothQuadTo)
+    ) : Command(CommandType.SmoothQuadToRelative)
 
     data class SmoothCubicTo(
         val x2: Float,
         val y2: Float,
         val x: Float,
         val y: Float,
-    ) : Command(CommandType.SmoothQuadToRelative)
+    ) : Command(CommandType.SmoothCubicTo)
 
     data class SmoothCubicToRelative(
         val dx2: Float,
         val dy2: Float,
         val dx: Float,
         val dy: Float,
-    ) : Command(CommandType.SmoothCubicTo)
+    ) : Command(CommandType.SmoothCubicToRelative)
 
     data class ArcTo(
         val rx: Float,
@@ -103,7 +103,7 @@ sealed class Command(val type: CommandType) {
         val sweepFlag: Boolean,
         val x: Float,
         val y: Float,
-    ) : Command(CommandType.SmoothCubicToRelative)
+    ) : Command(CommandType.ArcTo)
 
     data class ArcToRelative(
         val rx: Float,
@@ -113,9 +113,9 @@ sealed class Command(val type: CommandType) {
         val sweepFlag: Boolean,
         val dx: Float,
         val dy: Float,
-    ) : Command(CommandType.ArcTo)
+    ) : Command(CommandType.ArcToRelative)
 
-    object Close : Command(CommandType.ArcToRelative)
+    object Close : Command(CommandType.Close)
 }
 
 enum class CommandType(
