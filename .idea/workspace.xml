@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="add Outline.kt" />
+    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="add append">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathLength.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/TransformedPath.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/TransformedPath.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,7 +65,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.TransformedPathKt">
+  <component name="RunManager" selected="Kotlin.PathUtilsKt">
     <configuration name="JavaCompatibilityKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="simple.svg.JavaCompatibilityKt" />
       <module name="simple-svg.main" />
@@ -79,6 +87,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PathUtilsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="simple.svg.PathUtilsKt" />
+      <module name="simple-svg.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TransformedPathKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="simple.svg.TransformedPathKt" />
       <module name="simple-svg.main" />
@@ -88,6 +103,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.PathUtilsKt" />
         <item itemvalue="Kotlin.TransformedPathKt" />
         <item itemvalue="Kotlin.JavaCompatibilityKt" />
         <item itemvalue="Kotlin.PathKt" />
@@ -195,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657374872321</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add append">
+      <created>1657378240336</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1657378240336</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,7 +243,8 @@
     <MESSAGE value="add fromShape method" />
     <MESSAGE value="add transformations" />
     <MESSAGE value="add Outline.kt" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Outline.kt" />
+    <MESSAGE value="add append" />
+    <option name="LAST_COMMIT_MESSAGE" value="add append" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
