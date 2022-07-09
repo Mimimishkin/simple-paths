@@ -42,9 +42,26 @@ val Path.relative get() = modified({ it }) { c, lastX, lastY, _, _, _, _ ->
     c.relative(lastX ?: 0f, lastY ?: 0f)
 }
 
-val Path.simplified get() = modified({ it.flatten() }) { c, lastX, lastY, _, _, _, _ ->
-    c.simplified(lastX ?: 0f, lastY ?: 0f)
-}
+val Path.simplified: Path
+    get() {
+        var anchorX: Float? = null
+        var anchorY: Float? = null
+
+        return modified({ it.flatten() }) { c, lastX, lastY, _, _, _, _ ->
+            val simplified = c.simplified(lastX ?: 0f, lastY ?: 0f, anchorX, anchorY)
+
+            val singleOrNull = simplified.singleOrNull()
+            if (singleOrNull is QuadTo) {
+                anchorX = singleOrNull.x1
+                anchorY = singleOrNull.y1
+            } else if (singleOrNull is CubicTo) {
+                anchorX = singleOrNull.x2
+                anchorY = singleOrNull.y2
+            }
+
+            simplified
+        }
+    }
 
 val Path.cleared get() = modified({ it.filterNotNull() }) { c, lastX, lastY, nextX, nextY, _, _ ->
     c.takeIf { lastX != nextX || lastY != nextY }

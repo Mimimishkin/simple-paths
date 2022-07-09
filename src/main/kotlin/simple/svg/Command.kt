@@ -237,13 +237,13 @@ fun Command.relative(lastX: Float, lastY: Float) = when(this) {
     else -> this
 }
 
-fun Command.simplified(lastX: Float, lastY: Float): List<Command> =
+fun Command.simplified(lastX: Float, lastY: Float, anchorX: Float?, anchorY: Float?): List<Command> =
     absolute(lastX, lastY).let {
         when(it) {
             is VerticalLineTo -> listOf(LineTo(lastX, it.y))
             is HorizontalLineTo -> listOf(LineTo(it.x, lastY))
-            is SmoothQuadTo -> listOf(QuadTo(lastX, lastY, it.x, it.y))
-            is SmoothCubicTo -> listOf(CubicTo(lastX, lastY, it.x2, it.y2, it.x, it.y))
+            is SmoothQuadTo -> listOf(QuadTo(lastX + (lastX - (anchorX ?: throw RuntimeException())), lastY + (lastY - anchorY!!), it.x, it.y))
+            is SmoothCubicTo -> listOf(CubicTo(lastX + (lastX - (anchorX ?: throw RuntimeException())), lastY + (lastY - anchorY!!), it.x2, it.y2, it.x, it.y))
             is ArcTo -> it.curves(lastX, lastY)
             else -> listOf(it)
         }
