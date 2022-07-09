@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="fix path reversion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Command.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Command.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +58,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.PathKt">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="simple.svg.MainKt" />
       <module name="simple-svg.main" />
@@ -65,8 +66,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PathKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="simple.svg.PathKt" />
+      <module name="simple-svg.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.PathKt" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
@@ -129,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657319010927</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix path reversion">
+      <created>1657320110196</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657320110196</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -237,6 +237,18 @@ fun Command.relative(lastX: Float, lastY: Float) = when(this) {
     else -> this
 }
 
+fun Command.simplified(lastX: Float, lastY: Float): List<Command> =
+    absolute(lastX, lastY).let {
+        when(it) {
+            is VerticalLineTo -> listOf(LineTo(lastX, it.y))
+            is HorizontalLineTo -> listOf(LineTo(it.x, lastY))
+            is SmoothQuadTo -> listOf(QuadTo(lastX, lastY, it.x, it.y))
+            is SmoothCubicTo -> listOf(CubicTo(lastX, lastY, it.x2, it.y2, it.x, it.y))
+            is ArcTo -> it.curves(lastX, lastY)
+            else -> listOf(this)
+        }
+    }
+
 val Command.svgPath get() = when (this) {
     is ArcTo -> "A $rx $ry $xAxisRotation ${if (largeArcFlag) 1 else 0} ${if (sweepFlag) 1 else 0} $x $y"
     is ArcToRelative -> "a $rx $ry $xAxisRotation ${if (largeArcFlag) 1 else 0} ${if (sweepFlag) 1 else 0} $dx $dy"
