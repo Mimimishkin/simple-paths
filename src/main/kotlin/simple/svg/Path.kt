@@ -74,16 +74,16 @@ val Path.simplified: Path get() {
 }
 
 val Path.cleared: Path get() {
-    var moveToX = 0f
-    var moveToY = 0f
-    var lastX = 0f
-    var lastY = 0f
+    var moveToX: Float? = null
+    var moveToY: Float? = null
+    var lastX: Float? = null
+    var lastY: Float? = null
 
     return mapNotNull { command ->
         val prevX = lastX
         val prevY = lastY
 
-        lastCoordinates(command, lastY, lastX, moveToX, moveToY).apply {
+        lastCoordinates(command, lastY ?: 0f, lastX ?: 0f, moveToX ?: 0f, moveToY ?: 0f).apply {
             lastX = first
             lastY = second
         }

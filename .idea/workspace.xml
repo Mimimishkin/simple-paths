@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="fix path reversion">
+    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="fix path simplifying and add clearing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Command.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Command.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657320110196</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix path simplifying and add clearing">
+      <created>1657367034805</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657367034805</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +171,7 @@
     <MESSAGE value="fix commands type property" />
     <MESSAGE value="update build.gradle.kts" />
     <MESSAGE value="fix path reversion" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix path reversion" />
+    <MESSAGE value="fix path simplifying and add clearing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix path simplifying and add clearing" />
   </component>
 </project>
