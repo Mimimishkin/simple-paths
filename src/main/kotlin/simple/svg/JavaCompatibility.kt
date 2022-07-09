@@ -28,11 +28,12 @@ fun Path.asShape() = object : Shape {
         FlatteningPathIterator(getPathIterator(at), flatness)
 }
 
-fun fromShape(shape: Shape): Path {
+fun fromShape(shape: Shape) = fromPathIterator(shape.getPathIterator(null))
+
+fun fromPathIterator(iterator: PathIterator): Path {
     val path = emptyPath()
 
     val args = floatArrayOf(0f, 0f, 0f, 0f, 0f, 0f)
-    val iterator = shape.getPathIterator(null)
     while (!iterator.isDone) {
         when(iterator.currentSegment(args)) {
             SEG_MOVETO -> path.moveTo(args[0], args[1])

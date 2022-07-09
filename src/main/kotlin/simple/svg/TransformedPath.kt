@@ -1,5 +1,6 @@
 package simple.svg
 
+import simple.svg.Command.*
 import java.awt.geom.AffineTransform
 
 fun Path.transformed(transform: AffineTransform): Path = simplified.map { command ->
