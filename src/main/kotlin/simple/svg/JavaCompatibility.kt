@@ -2,10 +2,11 @@ package simple.svg
 
 import java.awt.Shape
 import java.awt.geom.*
+import java.awt.geom.PathIterator.*
 
-fun Path.asJavaShape() = object : Shape {
+fun Path.asShape() = object : Shape {
     override fun getPathIterator(at: AffineTransform?) =
-        TransformedPathIterator(Iter(this@asJavaShape), at)
+        TransformedPathIterator(Iter(this@asShape), at)
 
     override fun getBounds2D() = ShapeBounds.getBounds(getPathIterator(null))
 
@@ -27,6 +28,25 @@ fun Path.asJavaShape() = object : Shape {
         FlatteningPathIterator(getPathIterator(at), flatness)
 }
 
+fun fromShape(shape: Shape): Path {
+    val path = emptyPath
+
+    val args = floatArrayOf(0f, 0f, 0f, 0f, 0f, 0f)
+    val iterator = shape.getPathIterator(null)
+    while (!iterator.isDone) {
+        when(iterator.currentSegment(args)) {
+            SEG_MOVETO -> path.moveTo(args[0], args[1])
+            SEG_LINETO -> path.lineTo(args[0], args[1])
+            SEG_QUADTO -> path.quadTo(args[0], args[1], args[2], args[3])
+            SEG_CUBICTO -> path.cubicTo(args[0], args[1], args[2], args[3], args[4], args[5])
+            SEG_CLOSE -> path.close()
+        }
+        iterator.next()
+    }
+
+    return path.done()
+}
+
 private class TransformedPathIterator(
     private val iterator: PathIterator,
     private val transform: AffineTransform?
@@ -46,36 +66,40 @@ private class TransformedPathIterator(
 
 private class Iter(path: Path) : PathIterator {
     val iterator = path.simplified.iterator()
-    var current = iterator.next()
+    var current: Command? = null
 
-    override fun getWindingRule() = PathIterator.WIND_EVEN_ODD
+    init {
+        next()
+    }
 
-    override fun isDone() = !iterator.hasNext()
+    override fun getWindingRule() = WIND_EVEN_ODD
+
+    override fun isDone() = current == null
 
     override fun next() {
-        current = iterator.next()
+        current = try { iterator.next() } catch (_: NoSuchElementException) { null }
     }
 
     override fun currentSegment(coords: FloatArray): Int {
-        current.arguments.forEachIndexed { i, arg -> coords[i] = arg }
-        return when (current.type) {
-            CommandType.LineTo -> PathIterator.SEG_LINETO
-            CommandType.MoveTo -> PathIterator.SEG_MOVETO
-            CommandType.QuadTo -> PathIterator.SEG_QUADTO
-            CommandType.CubicTo -> PathIterator.SEG_CUBICTO
-            CommandType.Close -> PathIterator.SEG_CUBICTO
+        current!!.arguments.forEachIndexed { i, arg -> coords[i] = arg }
+        return when (current!!.type) {
+            CommandType.LineTo -> SEG_LINETO
+            CommandType.MoveTo -> SEG_MOVETO
+            CommandType.QuadTo -> SEG_QUADTO
+            CommandType.CubicTo -> SEG_CUBICTO
+            CommandType.Close -> SEG_CUBICTO
             else -> throw RuntimeException()
         }
     }
 
     override fun currentSegment(coords: DoubleArray): Int {
-        current.arguments.forEachIndexed { i, arg -> coords[i] = arg.toDouble() }
-        return when (current.type) {
-            CommandType.LineTo -> PathIterator.SEG_LINETO
-            CommandType.MoveTo -> PathIterator.SEG_MOVETO
-            CommandType.QuadTo -> PathIterator.SEG_QUADTO
-            CommandType.CubicTo -> PathIterator.SEG_CUBICTO
-            CommandType.Close -> PathIterator.SEG_CUBICTO
+        current!!.arguments.forEachIndexed { i, arg -> coords[i] = arg.toDouble() }
+        return when (current!!.type) {
+            CommandType.LineTo -> SEG_LINETO
+            CommandType.MoveTo -> SEG_MOVETO
+            CommandType.QuadTo -> SEG_QUADTO
+            CommandType.CubicTo -> SEG_CUBICTO
+            CommandType.Close -> SEG_CUBICTO
             else -> throw RuntimeException()
         }
     }

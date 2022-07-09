@@ -57,7 +57,7 @@ class ShapeBounds {
 		float[] y_coeff = new float[4];
 
 		float t, x, y, det;
-		while (i.isDone() == false) {
+		while (!i.isDone()) {
 			k = i.currentSegment(f);
 			if (k == PathIterator.SEG_MOVETO) {
 				lastX = f[0];

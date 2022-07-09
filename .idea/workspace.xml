@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="fix path simplifying and add clearing">
+    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="fix path clearing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simple/svg/ShapeBounds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/svg/ShapeBounds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.PathKt">
+  <component name="RunManager" selected="Kotlin.JavaCompatibilityKt">
+    <configuration name="JavaCompatibilityKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="simple.svg.JavaCompatibilityKt" />
+      <module name="simple-svg.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="simple.svg.MainKt" />
       <module name="simple-svg.main" />
@@ -74,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.JavaCompatibilityKt" />
         <item itemvalue="Kotlin.PathKt" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
@@ -151,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657367034805</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix path clearing">
+      <created>1657367457576</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657367457576</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +188,18 @@
     <MESSAGE value="update build.gradle.kts" />
     <MESSAGE value="fix path reversion" />
     <MESSAGE value="fix path simplifying and add clearing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix path simplifying and add clearing" />
+    <MESSAGE value="fix path clearing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix path clearing" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/simple/svg/ShapeBounds.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
