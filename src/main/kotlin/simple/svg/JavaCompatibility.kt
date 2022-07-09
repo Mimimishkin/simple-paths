@@ -29,7 +29,7 @@ fun Path.asShape() = object : Shape {
 }
 
 fun fromShape(shape: Shape): Path {
-    val path = emptyPath
+    val path = emptyPath()
 
     val args = floatArrayOf(0f, 0f, 0f, 0f, 0f, 0f)
     val iterator = shape.getPathIterator(null)
@@ -58,10 +58,10 @@ private class TransformedPathIterator(
     override fun next() = iterator.next()
 
     override fun currentSegment(coords: FloatArray) = iterator.currentSegment(coords)
-        .also { transform?.transform(coords, 0, coords, 0, coords.size) }
+        .also { transform?.transform(coords, 0, coords, 0, coords.size / 2) }
 
     override fun currentSegment(coords: DoubleArray) = iterator.currentSegment(coords)
-        .also { transform?.transform(coords, 0, coords, 0, coords.size) }
+        .also { transform?.transform(coords, 0, coords, 0, coords.size / 2) }
 }
 
 private class Iter(path: Path) : PathIterator {

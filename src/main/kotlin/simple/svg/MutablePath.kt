@@ -4,7 +4,7 @@ import simple.svg.Command.*
 
 typealias MutablePath = MutableList<Command>
 
-val emptyPath: MutablePath get() = mutableListOf()
+fun emptyPath(): MutablePath = mutableListOf()
 
 fun MutablePath.done(): Path = this
 
