@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="add fromShape method">
+    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="add transformations">
       <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Outline.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/ReversedPath.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/TransformedPath.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/DefaultFigures.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/DefaultFigures.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/MutablePath.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/MutablePath.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -190,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657369379485</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add transformations">
+      <created>1657372282504</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657372282504</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,7 +214,8 @@
     <MESSAGE value="fix path simplifying and add clearing" />
     <MESSAGE value="fix path clearing" />
     <MESSAGE value="add fromShape method" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fromShape method" />
+    <MESSAGE value="add transformations" />
+    <option name="LAST_COMMIT_MESSAGE" value="add transformations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
