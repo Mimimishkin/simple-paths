@@ -67,3 +67,6 @@ fun MutablePath.arcToRelative(rx: Float, ry: Float, xAxisRotation: Float, largeA
 
 fun MutablePath.close() =
     also { it += Close }
+
+fun MutablePath.append(other: Path) =
+    also { it += other }
