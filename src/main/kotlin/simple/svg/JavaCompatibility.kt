@@ -5,27 +5,25 @@ import java.awt.geom.*
 import java.awt.geom.PathIterator.*
 
 fun Path.asShape() = object : Shape {
-    override fun getPathIterator(at: AffineTransform?) =
-        TransformedPathIterator(Iter(this@asShape), at)
-
-    override fun getBounds2D() = ShapeBounds.getBounds(getPathIterator(null))
+    override fun getBounds2D() = this@asShape.bounds.run { Rectangle2D.Float(x, y, w, h) }
 
     override fun getBounds() = bounds2D.bounds
 
-    override fun contains(x: Double, y: Double) = Path2D.contains(getPathIterator(null), x, y)
+    override fun contains(x: Double, y: Double) = contains(x.toFloat(), y.toFloat())
 
-    override fun contains(p: Point2D?) = Path2D.contains(getPathIterator(null), p)
+    override fun contains(p: Point2D) = contains(p.x, p.y)
 
-    override fun contains(x: Double, y: Double, w: Double, h: Double) = Path2D.contains(getPathIterator(null), x, y, w, h)
+    override fun contains(x: Double, y: Double, w: Double, h: Double) = contains(x.toFloat(), y.toFloat(), w.toFloat(), h.toFloat())
 
-    override fun contains(r: Rectangle2D?) = Path2D.contains(getPathIterator(null), r)
+    override fun contains(r: Rectangle2D) = contains(r.x, r.y, r.width, r.height)
 
-    override fun intersects(x: Double, y: Double, w: Double, h: Double) = Path2D.intersects(getPathIterator(null), x, y, w, h)
+    override fun intersects(x: Double, y: Double, w: Double, h: Double) = intersects(x.toFloat(), y.toFloat(), w.toFloat(), h.toFloat())
 
-    override fun intersects(r: Rectangle2D?) = Path2D.intersects(getPathIterator(null), r)
+    override fun intersects(r: Rectangle2D) = intersects(r.x, r.y, r.width, r.height)
 
-    override fun getPathIterator(at: AffineTransform?, flatness: Double) =
-        FlatteningPathIterator(getPathIterator(at), flatness)
+    override fun getPathIterator(at: AffineTransform?) = TransformedPathIterator(Iter(this@asShape), at)
+
+    override fun getPathIterator(at: AffineTransform?, flatness: Double) = FlatteningPathIterator(getPathIterator(at), flatness)
 }
 
 fun fromShape(shape: Shape) = fromPathIterator(shape.getPathIterator(null))

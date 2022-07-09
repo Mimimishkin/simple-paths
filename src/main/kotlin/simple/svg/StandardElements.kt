@@ -12,6 +12,7 @@ fun rect(x: Float, y: Float, width: Float, height: Float, rx: Float = 0f, ry: Fl
     .arcToRelative(rx, ry, 0f, false, true, rx, -ry)
     .close()
     .done()
+    .cleared
 
 fun circle(cx: Float, cy: Float, r: Float) = ellipse(cx, cy, r, r)
 
@@ -26,13 +27,17 @@ fun line(x1: Float, y1: Float, x2: Float, y2: Float) = emptyPath()
     .lineTo(x2, y2)
     .done()
 
-fun polyline(vararg points: Pair<Float, Float>) = emptyPath()
+fun polyline(points: List<Pair<Float, Float>>) = emptyPath()
     .also { points.forEach { (x, y) -> it.lineOrMoveTo(x, y) } }
     .done()
 
-fun polygon(vararg points: Pair<Float, Float>) = emptyPath()
+fun polyline(vararg points: Pair<Float, Float>) = polyline(points.asList())
+
+fun polygon(points: List<Pair<Float, Float>>) = emptyPath()
     .also { points.forEach { (x, y) -> it.lineOrMoveTo(x, y) } }
     .close()
     .done()
+
+fun polygon(vararg points: Pair<Float, Float>) = polygon(points.asList())
 
 fun path(d: String) = parsePath(d)

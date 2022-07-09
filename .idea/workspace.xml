@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="add append">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathLength.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathUtils.kt" afterDir="false" />
+    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="add path utils">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathBounds.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simple/svg/ShapeBounds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/DefaultFigures.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/StandardElements.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/TransformedPath.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/TransformedPath.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathUtils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +218,28 @@
       <option name="project" value="LOCAL" />
       <updated>1657378240336</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="move path modifications to special method">
+      <created>1657390698011</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1657390698011</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add path transformations">
+      <created>1657390743126</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1657390743126</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add path utils">
+      <created>1657390758132</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1657390758132</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,17 +265,9 @@
     <MESSAGE value="add transformations" />
     <MESSAGE value="add Outline.kt" />
     <MESSAGE value="add append" />
-    <option name="LAST_COMMIT_MESSAGE" value="add append" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/simple/svg/ShapeBounds.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="move path modifications to special method" />
+    <MESSAGE value="add path transformations" />
+    <MESSAGE value="add path utils" />
+    <option name="LAST_COMMIT_MESSAGE" value="add path utils" />
   </component>
 </project>
