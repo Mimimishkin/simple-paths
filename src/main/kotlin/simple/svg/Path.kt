@@ -4,97 +4,49 @@ import simple.svg.Command.*
 
 typealias Path = List<Command>
 
-val Path.absolute: Path get() {
-    var moveToX = 0f
-    var moveToY = 0f
-    var lastX = 0f
-    var lastY = 0f
-
-    return map {
-        val absolute = it.absolute(lastX, lastY)
-
-        lastCoordinates(it, lastY, lastX, moveToX, moveToY).apply {
-            lastX = first
-            lastY = second
-        }
-
-        if (it is MoveTo || it is MoveToRelative) {
-            moveToX = lastX
-            moveToY = lastY
-        }
-
-        absolute
-    }
-}
-
-val Path.relative: Path get() {
-    var moveToX = 0f
-    var moveToY = 0f
-    var lastX = 0f
-    var lastY = 0f
-
-    return map {
-        val relative = it.relative(lastX, lastY)
-
-        lastCoordinates(it, lastY, lastX, moveToX, moveToY).apply {
-            lastX = first
-            lastY = second
-        }
-
-        if (it is MoveTo || it is MoveToRelative) {
-            moveToX = lastX
-            moveToY = lastY
-        }
-
-        relative
-    }
-}
-
-val Path.simplified: Path get() {
-    var moveToX = 0f
-    var moveToY = 0f
-    var lastX = 0f
-    var lastY = 0f
-
-    return flatMap {
-        val simplified = it.simplified(lastX, lastY)
-
-        lastCoordinates(it, lastY, lastX, moveToX, moveToY).apply {
-            lastX = first
-            lastY = second
-        }
-
-        if (it is MoveTo) {
-            moveToX = lastX
-            moveToY = lastY
-        }
-
-        simplified
-    }
-}
-
-val Path.cleared: Path get() {
+fun <T> Path.modified(
+    pathMaker: (List<T>) -> Path,
+    transform: (Command, lastX: Float?, lastY: Float?, nextX: Float, nextY: Float, moveToX: Float?, moveToY: Float?) -> T
+): Path {
     var moveToX: Float? = null
     var moveToY: Float? = null
     var lastX: Float? = null
     var lastY: Float? = null
 
-    return mapNotNull { command ->
+    return pathMaker(map {
         val prevX = lastX
         val prevY = lastY
 
-        lastCoordinates(command, lastY ?: 0f, lastX ?: 0f, moveToX ?: 0f, moveToY ?: 0f).apply {
+        lastCoordinates(it, lastY ?: 0f, lastX ?: 0f, moveToX ?: 0f, moveToY ?: 0f).apply {
             lastX = first
             lastY = second
         }
 
-        if (command is MoveTo) {
+        val modified = transform(it, prevX, prevY, lastX!!, lastY!!, moveToX, moveToY)
+
+        if (it is MoveTo || it is MoveToRelative) {
             moveToX = lastX
             moveToY = lastY
         }
 
-        command.takeIf { prevX != lastX || prevY != lastY }
-    }
+        modified
+    })
+}
+
+val Path.absolute get() = modified({ it }) { c, lastX, lastY, _, _ , _, _ ->
+    c.absolute(lastX ?: 0f, lastY ?: 0f)
+}
+
+val Path.relative get() = modified({ it }) { c, lastX, lastY, _, _, _, _ ->
+    c.relative(lastX ?: 0f, lastY ?: 0f)
+}
+
+val Path.simplified get() = modified({ it.flatten() }) { c, lastX, lastY, _, _, _, _ ->
+    c.simplified(lastX ?: 0f, lastY ?: 0f)
+}
+
+val Path.cleared get() = modified({ it.filterNotNull() }) { c, lastX, lastY, nextX, nextY, _, _ ->
+    c.takeIf { lastX != nextX && lastY != nextY }
 }
 
 private fun lastCoordinates(
