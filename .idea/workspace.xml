@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="add path utils">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathBounds.kt" afterDir="false" />
+    <list default="true" id="ff2f17a4-8026-4d17-b849-12cd1e462369" name="Changes" comment="fix path clearing">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/SplitInclusive.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/simple/svg/ArcToCurveKtTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/simple/svg/PathKtTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/simple/svg/PathParserKtTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/simple/svg/PathUtilsKtTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/simple/svg/ReversedPathKtTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/simple/svg/StandardElementsKtTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/simple/svg/TransformedPathKtTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/svg/ShapeBounds.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/DefaultFigures.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/StandardElements.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/JavaCompatibility.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Command.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Command.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/MutablePath.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/MutablePath.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/Path.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathBounds.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathBounds.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathParser.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/PathUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/simple/svg/ReversedPath.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/simple/svg/ReversedPath.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +33,23 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -46,16 +68,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mimimishkin\IdeaProjects\simple-svg\src\main\kotlin\simple\svg" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="simple.svg" />
@@ -64,50 +91,133 @@
       <recent name="simple.svg" />
       <recent name="" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="simple.svg" />
+    </key>
   </component>
-  <component name="RunManager" selected="Kotlin.PathUtilsKt">
-    <configuration name="JavaCompatibilityKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="simple.svg.JavaCompatibilityKt" />
-      <module name="simple-svg.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.ArcToCurveKtTest">
+    <configuration name="ArcToCurveKtTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;simple.svg.ArcToCurveKtTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="simple.svg.MainKt" />
-      <module name="simple-svg.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="PathKtTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;simple.svg.PathKtTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="PathKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="simple.svg.PathKt" />
-      <module name="simple-svg.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="PathKtTest.getCleared" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;simple.svg.PathKtTest.getCleared&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="PathUtilsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="simple.svg.PathUtilsKt" />
-      <module name="simple-svg.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="PathKtTest.getFullPath" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;simple.svg.PathKtTest.getFullPath&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="TransformedPathKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="simple.svg.TransformedPathKt" />
-      <module name="simple-svg.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="PathKtTest.getSubPaths" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;simple.svg.PathKtTest.getSubPaths&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.PathUtilsKt" />
-        <item itemvalue="Kotlin.TransformedPathKt" />
-        <item itemvalue="Kotlin.JavaCompatibilityKt" />
-        <item itemvalue="Kotlin.PathKt" />
-        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.ArcToCurveKtTest" />
+        <item itemvalue="Gradle.PathKtTest.getCleared" />
+        <item itemvalue="Gradle.PathKtTest" />
+        <item itemvalue="Gradle.PathKtTest.getSubPaths" />
+        <item itemvalue="Gradle.PathKtTest.getFullPath" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657390758132</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add path utils">
+      <created>1657395703781</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1657395703781</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

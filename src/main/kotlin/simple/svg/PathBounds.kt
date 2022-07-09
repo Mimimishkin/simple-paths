@@ -12,7 +12,7 @@ data class Bounds(
 
 private class EmptyPathException : RuntimeException()
 
-internal fun pathBounds(path: Path): Bounds {
+internal fun computeBounds(path: Path): Bounds {
     var egles: FloatArray? = null
     val topMaxX = 0
     val topMaxY = 1
@@ -50,7 +50,7 @@ internal fun pathBounds(path: Path): Bounds {
     val xCoeff = FloatArray(4)
     val yCoeff = FloatArray(4)
 
-    val iterator = path.iterator()
+    val iterator = path.simplified.iterator()
     while (iterator.hasNext()) {
         when (val command = iterator.next()) {
             is Command.MoveTo -> {

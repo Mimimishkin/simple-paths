@@ -1,6 +1,7 @@
 package simple.svg
 
 import simple.svg.Command.*
+import javax.print.attribute.standard.MediaSize.Other
 
 typealias Path = List<Command>
 
@@ -46,7 +47,7 @@ val Path.simplified get() = modified({ it.flatten() }) { c, lastX, lastY, _, _, 
 }
 
 val Path.cleared get() = modified({ it.filterNotNull() }) { c, lastX, lastY, nextX, nextY, _, _ ->
-    c.takeIf { lastX != nextX && lastY != nextY }
+    c.takeIf { lastX != nextX || lastY != nextY }
 }
 
 private fun lastCoordinates(

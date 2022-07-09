@@ -121,40 +121,40 @@ sealed class Command(val type: CommandType) {
 enum class CommandType(
     val argumentsCount: Int,
     val symbol: Char,
-    val next: CommandType,
+    val next: () -> CommandType,
     val makeCommand: (List<Float>) -> Command
 ) {
-    LineTo(2, 'L', LineTo, { LineTo(it[0], it[1]) }),
+    LineTo(2, 'L', { LineTo }, { LineTo(it[0], it[1]) }),
 
-    LineToRelative(2, 'l', LineToRelative, { LineToRelative(it[0], it[1]) }),
+    LineToRelative(2, 'l', { LineToRelative }, { LineToRelative(it[0], it[1]) }),
 
-    MoveTo(2, 'M', LineTo, { MoveTo(it[0], it[1]) }),
+    MoveTo(2, 'M', { LineTo }, { MoveTo(it[0], it[1]) }),
 
-    MoveToRelative(2, 'm', LineToRelative, { MoveToRelative(it[0], it[1]) }),
+    MoveToRelative(2, 'm', { LineToRelative }, { MoveToRelative(it[0], it[1]) }),
 
-    VerticalLineTo(1, 'V', VerticalLineTo, { VerticalLineTo(it[0]) }),
+    VerticalLineTo(1, 'V', { VerticalLineTo }, { VerticalLineTo(it[0]) }),
 
-    VerticalLineToRelative(1, 'v', VerticalLineToRelative, { VerticalLineToRelative(it[0]) }),
+    VerticalLineToRelative(1, 'v', { VerticalLineToRelative }, { VerticalLineToRelative(it[0]) }),
 
-    HorizontalLineTo(1, 'H', HorizontalLineTo, { HorizontalLineTo(it[0]) }),
+    HorizontalLineTo(1, 'H', { HorizontalLineTo }, { HorizontalLineTo(it[0]) }),
 
-    HorizontalLineToRelative(1, 'h', HorizontalLineToRelative, { HorizontalLineToRelative(it[0]) }),
+    HorizontalLineToRelative(1, 'h', { HorizontalLineToRelative }, { HorizontalLineToRelative(it[0]) }),
 
-    QuadTo(4, 'Q', QuadTo, { QuadTo(it[0], it[1], it[2], it[3]) }),
+    QuadTo(4, 'Q', { QuadTo }, { QuadTo(it[0], it[1], it[2], it[3]) }),
 
-    QuadToRelative(4, 'q', QuadToRelative, { QuadToRelative(it[0], it[1], it[2], it[3]) }),
+    QuadToRelative(4, 'q', { QuadToRelative }, { QuadToRelative(it[0], it[1], it[2], it[3]) }),
 
-    CubicTo(6, 'C', CubicTo, { CubicTo(it[0], it[1], it[2], it[3], it[4], it[5]) }),
+    CubicTo(6, 'C', { CubicTo }, { CubicTo(it[0], it[1], it[2], it[3], it[4], it[5]) }),
 
-    CubicToRelative(6, 'c', CubicToRelative, { CubicToRelative(it[0], it[1], it[2], it[3], it[4], it[5]) }),
+    CubicToRelative(6, 'c', { CubicToRelative }, { CubicToRelative(it[0], it[1], it[2], it[3], it[4], it[5]) }),
 
-    SmoothQuadTo(2, 'T', SmoothQuadTo, { SmoothQuadTo(it[0], it[1]) }),
+    SmoothQuadTo(2, 'T', { SmoothQuadTo }, { SmoothQuadTo(it[0], it[1]) }),
 
-    SmoothQuadToRelative(2, 't', SmoothQuadToRelative, { SmoothQuadToRelative(it[0], it[1]) }),
+    SmoothQuadToRelative(2, 't', { SmoothQuadToRelative }, { SmoothQuadToRelative(it[0], it[1]) }),
 
-    SmoothCubicTo(4, 'S', SmoothCubicTo, { SmoothCubicTo(it[0], it[1], it[2], it[3]) }),
+    SmoothCubicTo(4, 'S', { SmoothCubicTo }, { SmoothCubicTo(it[0], it[1], it[2], it[3]) }),
 
-    SmoothCubicToRelative(4, 's', SmoothCubicToRelative, {
+    SmoothCubicToRelative(4, 's', { SmoothCubicToRelative }, {
         SmoothCubicToRelative(
             it[0],
             it[1],
@@ -163,9 +163,9 @@ enum class CommandType(
         )
     }),
 
-    ArcTo(7, 'A', ArcTo, { ArcTo(it[0], it[1], it[2], it[3] == 1f, it[4] == 1f, it[5], it[6]) }),
+    ArcTo(7, 'A', { ArcTo }, { ArcTo(it[0], it[1], it[2], it[3] == 1f, it[4] == 1f, it[5], it[6]) }),
 
-    ArcToRelative(7, 'a', ArcToRelative, {
+    ArcToRelative(7, 'a', { ArcToRelative }, {
         ArcToRelative(
             it[0],
             it[1],
@@ -177,7 +177,7 @@ enum class CommandType(
         )
     }),
 
-    Close(0, 'Z', MoveTo, { Command.Close }),
+    Close(0, 'Z', { MoveTo }, { Command.Close }),
 }
 
 val Command.arguments: List<Float> get() = when(this) {
@@ -245,7 +245,7 @@ fun Command.simplified(lastX: Float, lastY: Float): List<Command> =
             is SmoothQuadTo -> listOf(QuadTo(lastX, lastY, it.x, it.y))
             is SmoothCubicTo -> listOf(CubicTo(lastX, lastY, it.x2, it.y2, it.x, it.y))
             is ArcTo -> it.curves(lastX, lastY)
-            else -> listOf(this)
+            else -> listOf(it)
         }
     }
 

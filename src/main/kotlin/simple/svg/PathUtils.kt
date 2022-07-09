@@ -3,7 +3,7 @@ package simple.svg
 import java.awt.geom.Path2D
 import java.awt.geom.PathIterator
 
-val Path.bounds get() = pathBounds(this)
+val Path.bounds get() = computeBounds(this)
 
 private val Path.iter: PathIterator get() = asShape().getPathIterator(null)
 

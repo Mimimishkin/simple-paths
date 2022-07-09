@@ -62,8 +62,8 @@ fun MutablePath.smoothCubicToRelative(dx2: Float, dy2: Float, dx: Float, dy: Flo
 fun MutablePath.arcTo(rx: Float, ry: Float, xAxisRotation: Float, largeArcFlag: Boolean, sweepFlag: Boolean, x: Float, y: Float,) =
     also { it += ArcTo(rx, ry, xAxisRotation, largeArcFlag, sweepFlag, x, y) }
 
-fun MutablePath.arcToRelative(rx: Float, ry: Float, xAxisRotation: Float, largeArcFlag: Boolean, sweepFlag: Boolean, dx: Float, dy: Float,) =
-    also { it += ArcToRelative(rx, ry, xAxisRotation, largeArcFlag, sweepFlag, dx, dy) }
+fun MutablePath.arcToRelative(rx: Float, ry: Float, xAxisRotation: Float, largeArc: Boolean, sweep: Boolean, dx: Float, dy: Float,) =
+    also { it += ArcToRelative(rx, ry, xAxisRotation, largeArc, sweep, dx, dy) }
 
 fun MutablePath.close() =
     also { it += Close }
