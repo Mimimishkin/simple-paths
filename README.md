@@ -3,6 +3,8 @@
 
 Very simple utilities for svg path
 
+It cannot parse the compact form of the element *a*! (e.g "A1 1 0 **00**64 39")
+
 ## Samples
 
 #### Svg paths
