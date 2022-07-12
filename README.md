@@ -1,4 +1,4 @@
-# Simple SVG
+# Simple Paths
 [![](https://jitpack.io/v/Mimimishkin/simple-svg.svg)](https://jitpack.io/#Mimimishkin/simple-svg)
 
 Very simple utilities for svg path
