@@ -1,5 +1,5 @@
 # Simple Paths
-[![](https://jitpack.io/v/Mimimishkin/simple-svg.svg)](https://jitpack.io/#Mimimishkin/simple-svg)
+[![](https://jitpack.io/v/Mimimishkin/simple-paths.svg)](https://jitpack.io/#Mimimishkin/simple-paths)
 
 Very simple utilities for svg path
 
