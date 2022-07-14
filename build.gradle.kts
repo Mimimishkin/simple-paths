@@ -27,7 +27,7 @@ tasks.withType<KotlinCompile> {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            artifactId = "simple-svg"
+            artifactId = "simple-path"
 
             from(components["kotlin"])
         }
