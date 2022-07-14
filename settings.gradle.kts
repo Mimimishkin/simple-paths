@@ -1,3 +1,3 @@
 
-rootProject.name = "simple-svg"
+rootProject.name = "simple-paths"
 
